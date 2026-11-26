@@ -1,0 +1,458 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap');
+
+/* =================================
+   CORES DO SITE
+================================= */
+
+:root {
+  --vinho: #54221f;
+  --vinho-escuro: #351512;
+  --terracota: #a84932;
+  --laranja: #d87943;
+  --dourado: #e9b65b;
+  --creme: #fff5e6;
+  --bege: #f1dfc5;
+  --texto: #39251f;
+  --branco: #ffffff;
+}
+
+/* =================================
+   CONFIGURAÇÕES GERAIS
+================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 25px;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--creme);
+  color: var(--texto);
+  line-height: 1.8;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: var(--terracota);
+}
+
+/* =================================
+   CABEÇALHO E MENU
+================================= */
+
+header {
+  background: var(--vinho-escuro);
+  min-height: 85px;
+  padding: 15px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  border-bottom: 4px solid var(--dourado);
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  color: var(--dourado);
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: var(--branco);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+nav a:hover,
+nav a.ativo {
+  color: var(--dourado);
+}
+
+/* BOTÃO DO MENU MOBILE */
+
+.menu-btn {
+  display: none;
+  background: var(--dourado);
+  color: var(--vinho-escuro);
+  border: none;
+  padding: 9px 14px;
+  border-radius: 7px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* =================================
+   CAPA PRINCIPAL
+================================= */
+
+.hero {
+  min-height: 510px;
+  padding: 65px 8%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 45px;
+
+  background:
+    linear-gradient(
+      120deg,
+      rgba(53, 21, 18, 0.97),
+      rgba(128, 64, 43, 0.88)
+    );
+
+  color: var(--branco);
+}
+
+.hero-conteudo {
+  max-width: 650px;
+}
+
+.hero-conteudo > p:first-child {
+  color: var(--dourado);
+  font-weight: 700;
+  letter-spacing: 3px;
+  font-size: 13px;
+  margin-bottom: 15px;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  color: var(--dourado);
+  font-size: clamp(38px, 5vw, 62px);
+  line-height: 1.15;
+  margin-bottom: 22px;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-bottom: 25px;
+}
+
+.hero img {
+  width: 38%;
+  max-width: 420px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 18px;
+  border: 4px solid var(--dourado);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* =================================
+   BOTÕES
+================================= */
+
+.btn {
+  display: inline-block;
+  background: var(--dourado);
+  color: var(--vinho-escuro);
+  padding: 13px 27px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 800;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: var(--laranja);
+  color: white;
+  transform: translateY(-3px);
+}
+
+/* =================================
+   CONTEÚDO
+================================= */
+
+main {
+  min-height: 65vh;
+}
+
+section {
+  padding: 70px 8%;
+}
+
+section:nth-of-type(even) {
+  background: var(--bege);
+}
+
+section h2 {
+  font-family: 'Playfair Display', serif;
+  color: var(--terracota);
+  font-size: clamp(28px, 4vw, 38px);
+  line-height: 1.25;
+  margin-bottom: 25px;
+}
+
+section p {
+  font-size: 17px;
+  margin-bottom: 17px;
+  text-align: justify;
+}
+
+/* =================================
+   TÍTULO DE DESTAQUE
+================================= */
+
+.titulo-pagina {
+  background: linear-gradient(
+    120deg,
+    var(--vinho),
+    var(--terracota)
+  );
+
+  color: white;
+  padding: 45px 30px;
+  text-align: center;
+  border-radius: 15px;
+  margin-bottom: 35px;
+}
+
+.titulo-pagina h1 {
+  font-family: 'Playfair Display', serif;
+  color: var(--dourado);
+  font-size: clamp(30px, 5vw, 48px);
+  margin-bottom: 12px;
+}
+
+.titulo-pagina p {
+  text-align: center;
+  margin-bottom: 0;
+}
+
+/* =================================
+   CARTÕES
+================================= */
+
+.cards,
+.etapas {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 25px;
+  margin-top: 35px;
+}
+
+.card,
+.etapa {
+  background: #fffaf1;
+  padding: 30px;
+  border-radius: 16px;
+  border: 1px solid #ead4b5;
+  border-bottom: 6px solid var(--laranja);
+  box-shadow: 0 8px 22px rgba(53, 21, 18, 0.10);
+  transition: 0.3s;
+}
+
+.card:hover,
+.etapa:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(53, 21, 18, 0.18);
+}
+
+.card h3,
+.etapa h3 {
+  color: var(--terracota);
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  margin-bottom: 12px;
+}
+
+.card p,
+.etapa p {
+  font-size: 15px;
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.card a {
+  display: inline-block;
+  margin-top: 12px;
+  color: var(--terracota);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.card a:hover {
+  color: var(--vinho);
+  text-decoration: underline;
+}
+
+/* =================================
+   ETAPAS DA PRODUÇÃO
+================================= */
+
+.numero {
+  display: block;
+  color: var(--laranja);
+  font-size: 38px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+/* =================================
+   CAIXA DE DESTAQUE
+================================= */
+
+.destaque {
+  background: var(--vinho);
+  color: white;
+  padding: 30px;
+  border-radius: 12px;
+  border-left: 7px solid var(--dourado);
+  margin: 30px 0;
+  box-shadow: 0 7px 18px rgba(53, 21, 18, 0.12);
+}
+
+.destaque h3 {
+  color: var(--dourado);
+  font-family: 'Playfair Display', serif;
+  font-size: 23px;
+  margin-bottom: 10px;
+}
+
+.destaque p {
+  color: white;
+  margin-bottom: 0;
+}
+
+/* =================================
+   IMAGENS DO CONTEÚDO
+================================= */
+
+.imagem-conteudo {
+  width: 100%;
+  max-height: 350px;
+  object-fit: cover;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(53, 21, 18, 0.15);
+}
+
+/* =================================
+   FONTES
+================================= */
+
+#fontes .card {
+  border-top: 1px solid #ead4b5;
+}
+
+#fontes .card a {
+  font-size: 14px;
+}
+
+/* =================================
+   RODAPÉ
+================================= */
+
+footer {
+  background: var(--vinho-escuro);
+  color: white;
+  text-align: center;
+  padding: 35px 15px;
+  border-top: 5px solid var(--dourado);
+}
+
+footer p {
+  margin: 5px;
+  text-align: center;
+  font-size: 14px;
+}
+
+footer strong {
+  color: var(--dourado);
+  font-family: 'Playfair Display', serif;
+  font-size: 21px;
+}
+
+/* =================================
+   RESPONSIVIDADE
+================================= */
+
+@media (max-width: 900px) {
+  header {
+    padding: 15px 5%;
+  }
+
+  nav {
+    gap: 12px;
+  }
+
+  nav a {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 750px) {
+
+  header {
+    padding: 15px 6%;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+
+  nav {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 10px 0;
+  }
+
+  nav.aberto {
+    display: flex;
+  }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 50px 6%;
+  }
+
+  .hero img {
+    width: 90%;
+    max-width: 380px;
+    height: 250px;
+  }
+
+  section {
+    padding: 45px 6%;
+  }
+
+  section h2 {
+    font-size: 29px;
+  }
+
+  .cards,
+  .etapas {
+    grid-template-columns: 1fr;
+  }
+
+  .titulo-pagina {
+    padding: 35px 20px;
+  }
+}
